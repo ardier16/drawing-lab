@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab3_OOP.Models
+namespace Lab3_OOP
 {
     class Picture
     {
         private Point Point { get; set; }
         private double Width { get; set; }
         private double Height { get; set; }
-        private List<Figure> FigureList { get; set; }
+        public List<Figure> FigureList { get; set; }
 
         public Picture(Point p, double w, double h, List<Figure> l)
         {
@@ -20,6 +20,14 @@ namespace Lab3_OOP.Models
             this.Width = w;
             this.Height = h;
             this.FigureList = l;
+        }
+
+        public Figure this[int i]
+        {
+            get
+            {
+                return this.FigureList[i];
+            }
         }
 
         public double Square()
@@ -34,7 +42,7 @@ namespace Lab3_OOP.Models
             return s;
         }
 
-        public void MoveFigures(int distanceX, int distanceY)
+        public void MoveFigures(double distanceX, double distanceY)
         {
             for (int i = 0; i < this.FigureList.Count; i++)
             {
@@ -45,11 +53,11 @@ namespace Lab3_OOP.Models
         public override string ToString()
         {
             return "Type: " + this.GetType().Name + "\n X: " + this.Point.X + "; Y: " + this.Point.Y +
-                    "/n Width: " + this.Width + "; Height: " + this.Height + "\n Figures count: " + this.FigureList.Count +
+                    "\n Width: " + this.Width + "; Height: " + this.Height + "\n Figures count: " + this.FigureList.Count +
                     "\n Summary square: " + this.Square();
         }
 
-        public void Draw(Graphics g)
+        public void DrawAll(Graphics g)
         {
             for (int i = 0; i < this.FigureList.Count; i++)
             {
@@ -69,7 +77,7 @@ namespace Lab3_OOP.Models
 
         public void RemoveAllFigures()
         {
-            this.FigureList.RemoveRange(0, this.FigureList.Count - 1);
+            this.FigureList.RemoveRange(0, this.FigureList.Count);
         }
 
         public void Move(int moveX, int moveY)
@@ -95,6 +103,15 @@ namespace Lab3_OOP.Models
             {
                 this.FigureList[i].Scale(size);
             }
+        }
+
+        public void Draw(Graphics g)
+        {
+            Bitmap image = new Bitmap((int)this.Width, (int)this.Height);
+            Graphics graphics = Graphics.FromImage(image);
+            g.Clear(Color.White);
+            this.DrawAll(g);
+            g.DrawImageUnscaled(image, 0, 0);
         }
 
     }
