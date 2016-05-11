@@ -2,8 +2,8 @@ C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\bin\Debug\Lab3 OOP.exe.
 C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\bin\Debug\Lab3 OOP.exe
 C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\bin\Debug\Lab3 OOP.pdb
 C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\obj\Debug\Lab3 OOP.csprojResolveAssemblyReference.cache
-C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\obj\Debug\Lab3_OOP.Form1.resources
 C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\obj\Debug\Lab3_OOP.Properties.Resources.resources
 C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\obj\Debug\Lab3 OOP.csproj.GenerateResource.Cache
 C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\obj\Debug\Lab3 OOP.exe
 C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\obj\Debug\Lab3 OOP.pdb
+C:\Users\Максим\Desktop\Projects\Lab3 OOP\Lab3 OOP\obj\Debug\Lab3_OOP.Drawing.resources

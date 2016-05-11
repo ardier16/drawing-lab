@@ -34,5 +34,10 @@ namespace Lab3_OOP
             return Pi * Radius * Radius * Height;
         }
 
+        public override string ToXml()
+        {
+            return String.Format("<figure><type>{0}</type><x>{1}</x><y>{2}</y><z>{3}</z><rad>{4}</rad><h>{5}</h></figure>", this.GetType().Name, X, Y, Z, Radius, Height);
+        }
+
     }
 }

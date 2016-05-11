@@ -20,9 +20,16 @@ namespace Lab3_OOP
         }
 
         public abstract double Volume();
+        public override abstract string ToXml();
 
-        public override void Scale(double size)
+        public override void Scale(double size, bool p)
         {
+            if (p)
+            {
+                X *= size;
+                Y *= size;
+                Z *= size;
+            }
             this.Radius *= size;
             this.Height *= size;
         }
@@ -32,6 +39,25 @@ namespace Lab3_OOP
             return "X: " + this.X +
                    "; Y: " + this.Y + "; Radius:" + this.Radius + "Height: " + this.Height +
                     "; Fill: " + this.isFill + "; Square: " + this.Square() + "; Volume: " + this.Volume() + ".";
+        }
+
+        public bool Cross(Figure3D f2)
+        {
+            double distance = Math.Sqrt(Math.Pow(f2.X - this.X, 2) + Math.Pow(f2.Y - this.Y, 2));
+
+            if (this.Z-this.Height <= f2.Z && this.Z - this.Height >= f2.Z-f2.Height)
+            {
+                if (distance < this.Radius + f2.Radius)
+                    return true;
+            }
+
+            else if(f2.Z-f2.Height <= this.Z && f2.Z - f2.Height >= this.Z-this.Height)
+            {
+                if (distance < this.Radius + f2.Radius)
+                    return true;
+            }
+
+            return false;
         }
     }
 }

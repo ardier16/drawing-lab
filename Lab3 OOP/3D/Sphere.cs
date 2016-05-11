@@ -24,5 +24,10 @@ namespace Lab3_OOP
         {
             return Square() * Radius / 3; ;
         }
+
+        public override string ToXml()
+        {
+            return String.Format("<figure><type>{0}</type><x>{1}</x><y>{2}</y><z>{3}</z><rad>{4}</rad></figure>", this.GetType().Name, X, Y, Z, Radius);
+        }
     }
 }

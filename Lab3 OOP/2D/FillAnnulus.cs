@@ -13,8 +13,8 @@ namespace Lab3_OOP
 
         public override void Draw(Graphics g)
         {
-            g.FillEllipse(this.FBrush, (float)(this.X - this.BigRadius), (float)(this.Y - this.BigRadius), 2 * (float)this.BigRadius, 2 * (float)this.BigRadius);
-            g.FillEllipse(new SolidBrush(Color.White), (float)(this.X - this.Radius), (float)(this.Y - this.Radius), 2 * (float)this.Radius, 2 * (float)this.Radius);
+            g.FillEllipse(this.FBrush, (float)(this.X - this.Radius), (float)(this.Y - this.Radius), 2 * (float)this.Radius, 2 * (float)this.Radius);
+            g.FillEllipse(new SolidBrush(Color.White), (float)(this.X - this.ShortRadius), (float)(this.Y - this.ShortRadius), 2 * (float)this.ShortRadius, 2 * (float)this.ShortRadius);
         }
     }
 }

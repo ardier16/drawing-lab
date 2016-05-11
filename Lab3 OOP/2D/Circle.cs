@@ -25,5 +25,9 @@ namespace Lab3_OOP
             return 2 * Pi * Radius;
         }
 
+        public override string ToXml()
+        {
+            return String.Format("<figure><type>{0}</type><x>{1}</x><y>{2}</y><rad>{3}</rad></figure>", this.GetType().Name, X, Y, Radius);
+        }
     }
 }

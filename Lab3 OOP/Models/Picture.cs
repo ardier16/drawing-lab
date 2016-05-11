@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Lab3_OOP
 {
-    class Picture
+    public class Picture
     {
-        private Point Point { get; set; }
-        private double Width { get; set; }
-        private double Height { get; set; }
+        public Point Point { get; set; }
+        public double Width { get; set; }
+        public double Height { get; set; }
         public List<Figure> FigureList { get; set; }
 
         public Picture(Point p, double w, double h, List<Figure> l)
@@ -47,6 +47,14 @@ namespace Lab3_OOP
             for (int i = 0; i < this.FigureList.Count; i++)
             {
                 this.FigureList[i].Move(distanceX, distanceY);
+            }
+        }
+
+        public void MoveFigures(Point p)
+        {
+            for (int i = 0; i < this.FigureList.Count; i++)
+            {
+                this.FigureList[i].Move(p);
             }
         }
 
@@ -88,9 +96,10 @@ namespace Lab3_OOP
 
         public void JoinPictures(Picture p)
         {
-            for (int i = 0; i < p.FigureList.Count; i++)
+            int k = p.FigureList.Count;
+            for (int i = 0; i < k; i++)
             {
-                this.AddFigure(p.FigureList[i]);
+                this.FigureList.Add(p.FigureList[i]);
             }
         }
 
@@ -101,7 +110,7 @@ namespace Lab3_OOP
 
             for (int i = 0; i < this.FigureList.Count; i++)
             {
-                this.FigureList[i].Scale(size);
+                this.FigureList[i].Scale(size, true);
             }
         }
 

@@ -15,9 +15,15 @@ namespace Lab3_OOP
         }
 
         public abstract double Perimeter();
+        public override abstract string ToXml();
 
-        public override void Scale(double size)
+        public override void Scale(double size, bool p)
         {
+            if (p)
+            {
+                X *= size;
+                Y *= size;
+            }
             this.Radius *= size;
         }
 
